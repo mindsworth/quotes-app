@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <title>Quotes App</title>
+</head>
+
+<body>
+    <main id="index">
+        <div class="container">
+            <div class="quote-wrap">
+                <div class="quote-inner">
+                    <div class="message">
+                        <h3>Ooops</h3>
+                        <p>No Quote to display.</p>
+                    </div>
+                    <div class="displaying">
+                        <img class="quote-icon" src="./imgs/quote_icon.png" alt="Qoutes Icon">
+                        <p></p>
+                        <img class="copy-icon" src="./imgs/clipboard_icon.png" alt="Copy to clipboard icon">
+                    </div>
+                </div>
+                <div class="quote-btn">
+                    <button id="quoteDisplay">
+                        <img src="./imgs/shuffle-icon.png" alt="shuffle icon">Random Quote</button>
+                </div>
+            </div>
+            <div class="brand-wrap">
+                <img src="./imgs/brand_logo.png" alt="Goziem Qoutes App Logo">
+                <h1>Goziem.</h1>
+                <p>Save your memorable</br>quotes.</p>
+            </div>
+            <div class="quote-add">
+                <input type="checkbox" id="nav-toggle" class="check-toggle">
+                <label for="nav-toggle" class="nav-toggle">
+                    <!-- <img src="./imgs/add_icon@2x.png" alt=""> -->
+                    <div class="line"></div>
+                </label>
+                <div class="nav-bg"></div>
+                <div class="quote-add-form">
+                    <div class="form-wrap">
+                        <textarea id="quote-content" name="" placeholder="Enter your quote here..."></textarea>
+                        <div class="btn-wrap">
+                            <label id="error">120</label>
+                            <button id="quoteBtn" class="form-btn">New Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

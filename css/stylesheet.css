@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    vertical-align: baseline;
+    border: 0;
+}
+
+@font-face {
+    font-family: 'Archer Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Archer Bold'), url('./fonts/Archer-Bold-Pro.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Archer Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Archer Book'), url('./fonts/Archer-Book-Pro.woff') format('woff');
+}
+
+main {
+    min-height: 100vh;
+    background: url('../imgs/bg1.png') no-repeat top left;
+    background-size: cover;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Archer Book';
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-wrap,
+.brand-wrap {
+    flex: 1;
+}
+
+.quote-inner {
+    width: 49rem;
+    height: 35rem;
+    background: #ffffff;
+    padding: 5rem;
+    position: relative;
+    margin-top: 23%;
+}
+
+.quote-inner p {
+    font-size: 2.2rem;
+}
+
+.quote-icon {
+    margin-bottom: 2rem;
+}
+
+.copy-icon {
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    cursor: pointer;
+}
+
+.brand-wrap {
+    text-align: center;
+    color: #ffffff;
+    /* padding-top: 10rem; */
+}
+
+.brand-wrap img {
+    margin-bottom: -3rem;
+}
+
+.brand-wrap h1 {
+    font-family: 'Archer Bold';
+}
+
+.quote-btn {
+    margin-top: 3rem;
+    margin-bottom: 20%;
+}
+
+.quote-btn button {
+    display: block;
+    font-size: 2.4rem;
+    font-family: 'Archer Bold';
+    padding: 1.1rem 3rem;
+    margin: 0;
+    border-radius: 3rem;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #3e73eb;
+}
+
+.quote-btn button img {
+    vertical-align: middle;
+    transform: scale(0.7);
+}
+
+.displaying {
+    display: none;
+    padding-top: 1rem;
+}
+
+.message {
+    text-align: center;
+    display: block;
+}
+
+.message h3 {
+    font-size: 13rem;
+    font-family: 'Archer Bold';
+    opacity: 0.1;
+}
+
+.btn-wrap {
+    position: relative;
+}
+
+#error {
+    font-size: 1.2rem;
+    position: absolute;
+    top: -1.7rem;
+    left: 0.5rem;
+    color: #ff4081;
+}
+
+.nav-bg,
+.nav-toggle {
+    position: fixed;
+    border-radius: 50%;
+}
+
+.nav-bg {
+    width: 6rem;
+    height: 6rem;
+    z-index: 2;
+    background-color: rgba(112, 112, 112, 0.85);
+    right: 10.5%;
+    bottom: 10.5%;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-toggle {
+    width: 7rem;
+    height: 7rem;
+    z-index: 10;
+    background-color: #ffffff;
+    right: 10%;
+    bottom: 10%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.check-toggle {
+    z-index: 1000;
+    display: none;
+}
+
+.check-toggle:checked~.nav-bg {
+    transform: scale(55);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.check-toggle:checked~.nav-toggle .line {
+    transform: translate(-150%, -50%) rotate(45deg);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.check-toggle:checked~.quote-add-form {
+    opacity: 1;
+    width: 100%;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* .nav-toggle img {
+	margin-top: 50%;
+    margin-right: -50%;
+    transform: translate(50%, -50%);
+	width: 3rem;
+	height: auto;
+} */
+
+.nav-toggle .line {
+    width: 50%;
+    height: 4px;
+    background-color: #3e73eb;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50%;
+    margin-right: -50%;
+    position: relative;
+    transform: translate(-150%, -50%) rotate(0deg);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-toggle .line::after {
+    width: 100%;
+    height: 4px;
+    background-color: #3e73eb;
+    content: '';
+    display: block;
+    position: absolute;
+    margin-top: 8px;
+    transform: translate(0%, -240%) rotate(90deg);
+}
+
+.quote-add-form {
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-wrap {
+    width: 55rem;
+    height: 25rem;
+    padding: 2rem;
+    background: #f7f7f7;
+}
+
+.form-wrap textarea {
+    width: 100%;
+    height: 12rem;
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-btn {
+    display: block;
+    width: 100%;
+    height: 6rem;
+    margin-top: 3rem;
+    background: #588ffe;
+    color: #ffffff;
+    font-family: 'Archer Bold';
+    font-size: 2.8rem;
+    cursor: pointer;
+}
