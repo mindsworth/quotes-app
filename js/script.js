@@ -48,7 +48,7 @@ const handleAddQuote = () => {
 
 const handleDisplayQuote = () => {
 	const rand = Math.floor(Math.random() * store.length);
-	const randBg = Math.floor(Math.random() * 3 + 1);
+	const randBg = Math.floor(Math.random() * 4 + 1);
 
 	if (store.length > 0) {
 		message.style.display = 'none';
@@ -96,10 +96,12 @@ const handleFlashMessage = text => {
 	}, 3000);
 };
 
-copyIcon.addEventListener('click', () => {
+const handleCopyCommand = () => {
 	document.execCommand('copy');
 	handleFlashMessage('Quote copied.');
-});
+};
+
+copyIcon.addEventListener('click', handleCopyCommand);
 
 document.addEventListener('copy', handleCopyQuote);
 quote.addEventListener('input', handleOnInput);

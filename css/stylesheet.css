@@ -23,7 +23,7 @@
 
 main {
     min-height: 100vh;
-    background: url('../imgs/bg1.png') no-repeat top left;
+    background: url('../imgs/bg4.png') no-repeat top left;
     background-size: cover;
 }
 
@@ -269,7 +269,7 @@ body {
 .flash-message {
     position: absolute;
     top: 2rem;
-    right: 4rem;
+    right: 12rem;
     padding: 1rem 5rem;
     /* color: #ffffff; */
     background-color: #c5e1a5;
