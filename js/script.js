@@ -2,6 +2,7 @@ let quote,
 	flashMessage,
 	quoteBtn,
 	copyIcon,
+	localStore,
 	store,
 	error,
 	counter,
@@ -10,7 +11,6 @@ let quote,
 	displaying,
 	message,
 	holder,
-	localStore,
 	bg;
 
 quote = document.querySelector('#quote-content');
@@ -25,8 +25,8 @@ holder = document.querySelector('.displaying');
 navToggle = document.querySelector('#nav-toggle');
 flashMessage = document.querySelector('.flash-message');
 counter = 164;
-localStore = JSON.parse(localStorage.getItem('store'));
-store = [...localStore];
+store = !!localStorage.store ? JSON.parse(localStorage.getItem('store')) : [];
+console.log(store);
 
 const handleAddQuote = () => {
 	let text = quote.value.trim();
@@ -59,6 +59,8 @@ const handleDisplayQuote = () => {
 		bg.style.background = "url('./imgs/bg" + randBg + ".png') no-repeat top left";
 		bg.style.backgroundSize = 'cover';
 		console.log(randBg);
+	} else {
+		handleFlashMessage('No quote to display.');
 	}
 };
 
