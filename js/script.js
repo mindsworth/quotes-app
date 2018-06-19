@@ -24,7 +24,7 @@ holder = document.querySelector('.displaying');
 navToggle = document.querySelector('#nav-toggle');
 flashMessage = document.querySelector('.flash-message');
 counter = 164;
-store = JSON.parse(localStorage.getItem('store')); //[];
+store = JSON.parse(localStorage.getItem('store')) || [];
 
 const handleAddQuote = () => {
 	let text = quote.value.trim();
