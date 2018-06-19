@@ -10,6 +10,7 @@ let quote,
 	displaying,
 	message,
 	holder,
+	localStore,
 	bg;
 
 quote = document.querySelector('#quote-content');
@@ -24,7 +25,8 @@ holder = document.querySelector('.displaying');
 navToggle = document.querySelector('#nav-toggle');
 flashMessage = document.querySelector('.flash-message');
 counter = 164;
-store = JSON.parse(localStorage.getItem('store')) || [];
+localStore = JSON.parse(localStorage.getItem('store'));
+store = [...localStore];
 
 const handleAddQuote = () => {
 	let text = quote.value.trim();
