@@ -311,21 +311,21 @@ body {
         overflow: hidden;
     }
     .container {
-        border: 1px solid #000;
+        width: 90%;
         flex-direction: column-reverse;
     }
     .quote-wrap {
-        margin: 0 1rem;
+        width: 100%;
+        margin-top: 3rem;
     }
     .brand-wrap {
         margin-top: 1rem;
     }
     .quote-inner {
-        max-width: 36rem;
+        width: 100%;
         height: 35rem;
-        background: #ffffff;
         padding: 5rem;
-        margin: 2rem;
+        margin: 0;
     }
     .message h3 {
         font-size: 8rem;
@@ -333,7 +333,6 @@ body {
     .quote-btn button {
         font-size: 2rem;
         padding: 0.8rem 2rem;
-        /* margin: 1rem; */
     }
     .nav-toggle {
         width: 6rem;
