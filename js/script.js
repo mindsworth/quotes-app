@@ -28,12 +28,6 @@ counter = 164;
 store = !!localStorage.store ? JSON.parse(localStorage.getItem('store')) : [];
 console.log(store);
 
-copyIcon.addEventListener('click', handleCopyCommand);
-document.addEventListener('copy', handleCopyQuote);
-quote.addEventListener('input', handleOnInput);
-quoteBtn.addEventListener('click', handleAddQuote);
-quoteDisplay.addEventListener('click', handleDisplayQuote);
-
 const handleAddQuote = () => {
 	let text = quote.value.trim();
 	error.style.display = 'block';
@@ -108,5 +102,11 @@ const handleFlashMessage = text => {
 
 const handleCopyCommand = () => {
 	document.execCommand('copy');
-	handleFlashMessage('Quote copied.');
+	handleFlashMessage('Quote copied to your clipboard.');
 };
+
+copyIcon.addEventListener('click', handleCopyCommand);
+document.addEventListener('copy', handleCopyQuote);
+quote.addEventListener('input', handleOnInput);
+quoteBtn.addEventListener('click', handleAddQuote);
+quoteDisplay.addEventListener('click', handleDisplayQuote);
