@@ -48,6 +48,13 @@ const handleAddQuote = () => {
 	}
 };
 
+const animateBg = () => {
+	bg.style.backgroundPosition = '0%, 200%';
+	setTimeout(() => {
+		bg.style.backgroundPosition = 'top, left';
+	}, 2000);
+};
+
 const handleDisplayQuote = () => {
 	const rand = Math.floor(Math.random() * store.length);
 	const randBg = Math.floor(Math.random() * 4 + 1);
@@ -58,6 +65,8 @@ const handleDisplayQuote = () => {
 		holder.children[1].innerHTML = store[rand];
 		bg.style.background = "url('./imgs/bg" + randBg + ".png') no-repeat top left";
 		bg.style.backgroundSize = 'cover';
+		animateBg();
+		bg.style.transition = 'all 3s ease-in-out';
 		console.log(randBg);
 	} else {
 		handleFlashMessage('No quote to display.');
